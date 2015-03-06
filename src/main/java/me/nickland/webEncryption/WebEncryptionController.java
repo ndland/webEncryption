@@ -1,4 +1,4 @@
-package hello;
+package me.nickland.webEncryption;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
