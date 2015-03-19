@@ -1,5 +1,7 @@
 package me.nickland.webEncryption;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -7,16 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by nland on 3/6/2015.
  */
 
-@RestController
+@Controller
 public class WebEncryptionController {
 
     @RequestMapping("/")
-    public String index() {
-        return "Welcome to what will become a WebEncryption utility!";
-    }
-
-    @RequestMapping("/newurl")
-    public String newUrl() {
-        return "This is a new page, possibly a returned file?";
+    public String index(Model model) {
+        model.addAttribute("message", "Hello, From Thymeleaf!");
+        return "hello";
     }
 }
