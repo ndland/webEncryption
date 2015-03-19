@@ -5,6 +5,12 @@
     <title>Welcome to WebEncryption</title>
 </head>
 <body>
-<h1 th:text="${message}"></h1>
+    <h1>WebEncryption</h1>
+    <form id="encryption_form" method="post" action="/processfile">
+        <input th:type="file" name="file"/>
+        <input th:type="password" name="password" placeholder="password"/>
+        <input th:type="submit" th:value="Submit" />
+    </form>
+
 </body>
 </html>
