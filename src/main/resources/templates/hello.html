@@ -7,11 +7,20 @@
 </head>
 <body>
     <h1>WebEncryption</h1>
-    <form id="encryption_form" method="post" action="/processfile">
+    <form id="encryption_form" method="POST" action="/encryptFile">
         <input th:type="file" name="file"/>
         <input th:type="password" name="password" placeholder="password"/>
         <input th:type="submit" th:value="Submit" />
     </form>
 
+    <form id="encryption_form" method="POST" action="/decryptFile">
+        <div class="form-group">
+            <label for="file">File</label>
+            <input class="form-control" th:type="file" name="file"/>
+            <label for="password">Password</label>
+            <input class="form-control" th:type="password" name="password" placeholder="password"/>
+            <input th:type="submit" th:value="Submit" />
+        </div>
+    </form>
 </body>
 </html>

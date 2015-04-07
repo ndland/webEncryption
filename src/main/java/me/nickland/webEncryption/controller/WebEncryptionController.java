@@ -21,12 +21,21 @@ public class WebEncryptionController {
         return "hello";
     }
 
-    @RequestMapping(value = "/processfile", method = RequestMethod.POST)
+    @RequestMapping(value = "/encryptFile", method = RequestMethod.POST)
     public String processInput(@RequestParam(value = "file", required = false) File file,
                                @RequestParam(value = "password") String password, Model model) {
+        model.addAttribute("transaction", "Encrypted PDF");
+        model.addAttribute("file", file);
+        model.addAttribute("password", password);
+        return "processedfile";
+    }
+
+    @RequestMapping(value = "/decryptFile", method = RequestMethod.POST)
+    public String decryptFile(@RequestParam(value = "file", required = true) File file,
+                              @RequestParam(value = "password", required = true) String password, Model model) {
+        model.addAttribute("transaction", "Decrypted PDF");
         model.addAttribute("file", file);
         model.addAttribute("password", password);
         return "processedfile";
     }
 }
-
