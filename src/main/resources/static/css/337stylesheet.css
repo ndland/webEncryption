@@ -1,0 +1,79 @@
+div.top {
+		background: #C2C2C2;
+		position: fixed;
+		left:0;
+		right:0;
+		height:35px;
+		top: 0;
+		}
+
+div.bottom {
+			background: #C2C2C2;
+            position: fixed;
+            left:0;
+            right:0;
+            height:40px;
+            bottom: 0;
+			}
+
+div.right{
+		  background: #C2C2C2;
+          position: fixed;
+          top: 0;
+          bottom:0;
+          width: 30px;
+          right: 0;
+		}
+div.left {
+		  background: #C2C2C2;
+          position: fixed;
+          top: 0;
+          bottom:0;
+          width: 30px;
+          left:0;
+			}
+
+header {
+			text-align:center;
+			background: #C2C2C2;
+			}
+
+div.forms {display: block;
+			margin-left: auto;
+			margin-right: auto;
+			width: 100%;
+			align: center;
+			}
+
+div.encryptionForm {
+				   padding: 25px;
+				   border: 35px solid #33AD5C ;
+				   margin: 25px;
+				   float: left;
+				   text-align: left;
+				   display: inline-block;
+				    }
+
+div.decryptionForm {
+				   border: 25px solid #33AD5C ;
+				   margin: 25px;
+				   float: left;
+				   padding: 35.5px;
+				   text-align: left;
+				   display: inline-block;
+				    }
+
+
+body 	{
+		   background: white;
+		}
+
+
+h1 		{ color: #33AD5C;
+		  font-family: Copperplate Gothic Bold;
+		  font-size: 48px;
+		}
+
+label 	{font-family: Copperplate Gothic Bold;
+		}
+
