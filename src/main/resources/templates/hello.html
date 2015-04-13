@@ -1,26 +1,57 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head lang="en">
     <meta charset="UTF-8" />
-    <title>Welcome to WebEncryption</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <title>Welcome to PDF Encrypt</title>
+    <link rel="stylesheet" type="text/css" href="css/337stylesheet.css" />
+
 </head>
+
+<header>
+    <h1>PDF Encrypt</h1>
+</header>
+
 <body>
-    <h1>WebEncryption</h1>
+<div class="top"></div>
+<div class="bottom"></div>
+<div class="right"></div>
+<div class="left"></div>
+
+<div class="forms">
+<div class = "encryptionForm">
     <form id="encryption_form" method="POST" action="/encryptFile">
-        <input th:type="file" name="file"/>
+        <label for="file"><strong>Please upload PDF file to encrypt:</strong></label>
+        <input th:type="file" name="file" placeholder="PDF file to encrypt"/>
+        <br/>
+        <br/>
+        <label><strong>Please enter password for encryption:</strong></label>
         <input th:type="password" name="password" placeholder="password"/>
+        <br/>
+        <br/>
+        <label><strong>Submit:</strong></label>
         <input th:type="submit" th:value="Submit" />
     </form>
+</div>
 
+<div class= "decryptionForm">
     <form id="encryption_form" method="POST" action="/decryptFile">
         <div class="form-group">
-            <label for="file">File</label>
-            <input class="form-control" th:type="file" name="file"/>
-            <label for="password">Password</label>
+            <label for="file"><strong>Please upload PDF file to decrypt: </strong></label>
+            <input class="form-control" th:type="file" name="file" placeholder="PDF file to decrypt"/>
+            <br/>
+            <br/>
+            <label for="password"><strong>Password: </strong></label>
             <input class="form-control" th:type="password" name="password" placeholder="password"/>
+            <br/>
+            <br/>
+            <label><strong>Submit: </strong></label>
             <input th:type="submit" th:value="Submit" />
         </div>
     </form>
+    </div>
+</div>
 </body>
+
+
 </html>
