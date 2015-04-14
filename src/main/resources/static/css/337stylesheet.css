@@ -9,28 +9,28 @@ div.top {
 
 div.bottom {
 			background: #C2C2C2;
-            position: fixed;
-            left:0;
-            right:0;
-            height:40px;
-            bottom: 0;
+			position: fixed;
+			left:0;
+			right:0;
+			height:40px;
+			bottom: 0;
 			}
 
 div.right{
 		  background: #C2C2C2;
-          position: fixed;
-          top: 0;
-          bottom:0;
-          width: 30px;
-          right: 0;
+		  position: fixed;
+		  top: 0;
+		  bottom:0;
+		  width: 30px;
+		  right: 0;
 		}
 div.left {
-		  background: #C2C2C2;
-          position: fixed;
-          top: 0;
-          bottom:0;
-          width: 30px;
-          left:0;
+			background: #C2C2C2;
+			position: fixed;
+			top: 0;
+			bottom:0;
+			width: 30px;
+			left:0;
 			}
 
 header {
@@ -39,7 +39,7 @@ header {
 			}
 
 div.forms {display: block;
-			margin-left: auto;
+			margin-left: 45px;
 			margin-right: auto;
 			width: 100%;
 			align: center;
@@ -62,7 +62,18 @@ div.decryptionForm {
 				   text-align: left;
 				   display: inline-block;
 				    }
-
+div.instructions {
+					-webkit-column-count: 2;
+                     -moz-column-count: 2;
+                     column-count: 2;
+					text-align: left;
+					float: left;
+					font-family: Rockwell;
+					margin-left: 60px;
+					margin-bottom: 150px;
+					margin-top: -35px;
+					display:block;
+				 }
 
 body 	{
 		   background: white;
@@ -70,10 +81,12 @@ body 	{
 
 
 h1 		{ color: #33AD5C;
-		  font-family: Copperplate Gothic Bold;
+		  font-family: Rockwell;
 		  font-size: 48px;
 		}
 
-label 	{font-family: Copperplate Gothic Bold;
+label 	{font-family: Rockwell;
 		}
+
+
 
