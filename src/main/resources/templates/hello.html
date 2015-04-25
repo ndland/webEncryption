@@ -3,9 +3,9 @@
 
 
 <head lang="en">
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Welcome to PDF Encrypt</title>
-    <link rel="stylesheet" type="text/css" href="css/337stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="css/337stylesheet.css"/>
 
 </head>
 
@@ -20,49 +20,56 @@
 <div class="left"></div>
 
 <div class="forms">
-<div class = "encryptionForm">
-    <form id="encryption_form" method="POST" action="/encryptFile">
-        <label for="file"><strong>Please upload PDF file to encrypt:</strong></label>
-        <input th:type="file" name="file" placeholder="PDF file to encrypt"/>
-        <br/>
-        <br/>
-        <label><strong>Please enter password for encryption:</strong></label>
-        <input th:type="password" name="password" placeholder="password"/>
-        <br/>
-        <br/>
-        <label><strong>Submit:</strong></label>
-        <input th:type="submit" th:value="Submit" />
-    </form>
-</div>
+    <div class="encryptionForm">
+        <form id="encryption_form" method="POST" action="/encryptFile">
+            <label for="file"><strong>Please upload PDF file to encrypt:</strong></label>
+            <input th:type="file" name="file" placeholder="PDF file to encrypt"/>
+            <br/>
+            <br/>
+            <label><strong>Please enter password for encryption:</strong></label>
+            <input th:type="password" name="password" placeholder="password"/>
+            <br/>
+            <br/>
+            <label><strong>Submit:</strong></label>
+            <input th:type="submit" th:value="Submit"/>
+        </form>
+    </div>
 
-<div class= "decryptionForm">
-    <form id="encryption_form" method="POST" action="/decryptFile">
-        <div class="form-group">
-            <label for="file"><strong>Please upload PDF file to decrypt: </strong></label>
-            <input class="form-control" th:type="file" name="file" placeholder="PDF file to decrypt"/>
-            <br/>
-            <br/>
-            <label for="password"><strong>Password: </strong></label>
-            <input class="form-control" th:type="password" name="password" placeholder="password"/>
-            <br/>
-            <br/>
-            <label><strong>Submit: </strong></label>
-            <input th:type="submit" th:value="Submit" />
-        </div>
-    </form>
+    <div class="decryptionForm">
+        <form id="encryption_form" method="POST" action="/decryptFile">
+            <div class="form-group">
+                <label for="file"><strong>Please upload PDF file to decrypt: </strong></label>
+                <input class="form-control" th:type="file" name="file" placeholder="PDF file to decrypt"/>
+                <br/>
+                <br/>
+                <label for="password"><strong>Password: </strong></label>
+                <input class="form-control" th:type="password" name="password" placeholder="password"/>
+                <br/>
+                <br/>
+                <label><strong>Submit: </strong></label>
+                <input th:type="submit" th:value="Submit"/>
+            </div>
+        </form>
     </div>
 </div>
 
 <div class="instructions">
     <p><strong>Instructions to Encrypt File:</strong></p>
-    <p>1. Browse for PDF to encrypt in your own files</p>
-    <p>2. Click submit</p>
-    <p>3. Encrypted file will be returned to you</p>
+    <ol>
+        <li>Browse for PDF to encrypt in your own files</li>
+        <li>Click submit</li>
+        <li>Encrypted file will be returned to you</li>
+    </ol>
     <br/>
+
     <p><strong>Instructions to Decrypt File</strong></p>
-    <p>1. Browse for the already encrypted file</p>
-    <p>2. Click submit</p>
-    <p>3. Decrypted file will be returned to you</p>
+<ol>
+    <li>Browse for the already encrypted file</li>
+
+    <li>Click submit</li>
+
+    <li>Decrypted file will be returned to you</li>
+</ol>
 </div>
 </body>
 

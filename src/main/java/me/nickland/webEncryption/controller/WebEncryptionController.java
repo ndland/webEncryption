@@ -35,15 +35,20 @@ public class WebEncryptionController {
         model.addAttribute("file", file);
         model.addAttribute("password", password);
 
+        boolean valid;
         //Create an object of the Encryption Model
         EncryptionModel eM = new EncryptionModel();
 
+        System.out.println(file.getAbsoluteFile());
         //Send the file to be encrypted
         //          SRC: Source of file to be encyrpted
         //          DEST: Destination of new encrypted file to be saved
         //          Password: to encrypt the file with
-        eM.encryptPdf(file.getPath(), "C:/Users/Missy/Desktop/" + file + "_Encrypted.pdf", password);
-        return "processedfile";
+        valid = eM.encryptPdf("FilesToBeEncrypted/" + file, "EncryptedFiles/" + file + "_Encrypted.pdf", password);
+        if(valid == true)
+            return "processedfile";
+        else
+            return "fileFailed";
 
     }
 
@@ -54,6 +59,7 @@ public class WebEncryptionController {
         model.addAttribute("file", file);
         model.addAttribute("password", password);
 
+        boolean valid;
         //Create an object of the Encryption Model
         EncryptionModel eM = new EncryptionModel();
 
@@ -61,8 +67,13 @@ public class WebEncryptionController {
         //Sends in - SRC: source of file that is encrypted,
         //          DEST: Decrypted file to be saved to
         //          Password: Password used to encrypt file
-        eM.decryptPdf(file.getAbsolutePath(), "C:/Users/Missy/Desktop/" + file + "_Decrypted.pdf", password);
+        valid = eM.decryptPdf("EncryptedFiles/" + file, "DecryptedFiles/" + file + "_Decrypted.pdf", password);
+
+        if(valid == true)
         return "processedfile";
+
+        else
+            return "fileFailedDecrypt";
     }
 
 }
