@@ -38,6 +38,8 @@ public class WebEncryptionController {
         //Create an object of the Encryption Model
         EncryptionModel eM = new EncryptionModel();
 
+        System.out.println("File path: " + file.getAbsolutePath());
+
         //Send the file to be encrypted
         //          SRC: Source of file to be encyrpted
         //          DEST: Destination of new encrypted file to be saved
