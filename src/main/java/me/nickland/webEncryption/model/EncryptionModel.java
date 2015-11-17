@@ -15,25 +15,45 @@ import java.io.IOException;
  */
 public class EncryptionModel {
 
-    public void encryptPdf(String src, String dest, String password) throws IOException, DocumentException {
+    public boolean encryptPdf(String src, String dest, String password) throws IOException, DocumentException {
 
-        PdfReader reader = new PdfReader(src);
-        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream(dest));
-        //System.out.println("Encrypting File");
-        stamper.setEncryption(password.getBytes(), password.getBytes(),
-                PdfWriter.ALLOW_PRINTING, PdfWriter.ENCRYPTION_AES_128 | PdfWriter.DO_NOT_ENCRYPT_METADATA);
-        //System.out.println("yes");
+        //Check if file is already encrypted
 
-        stamper.close();
-        reader.close();
+
+        try {
+            PdfReader reader = new PdfReader(src);
+
+            PdfStamper stamper = new PdfStamper(reader, new FileOutputStream(dest));
+            //System.out.println("Encrypting File");
+            stamper.setEncryption(password.getBytes(), password.getBytes(),
+                    PdfWriter.ALLOW_PRINTING, PdfWriter.ENCRYPTION_AES_256 | PdfWriter.DO_NOT_ENCRYPT_METADATA);
+            //System.out.println("yes");
+
+            stamper.close();
+            reader.close();
+            return true;
+
+        }
+        catch(IOException e){
+            return false;
+
+        }
     }
 
-    public void decryptPdf(String src, String dest, String password) throws IOException, DocumentException {
 
-        PdfReader reader = new PdfReader(src, password.getBytes());
-        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream(dest));
-        stamper.close();
-        reader.close();
+    public boolean decryptPdf(String src, String dest, String password) throws IOException, DocumentException {
+
+        try {
+            PdfReader reader = new PdfReader(src, password.getBytes());
+            PdfStamper stamper = new PdfStamper(reader, new FileOutputStream(dest));
+            stamper.close();
+            reader.close();
+
+            return true;
+        }
+        catch(IOException e){
+            return false;
+        }
     }
 
 

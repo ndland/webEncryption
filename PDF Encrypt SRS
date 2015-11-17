@@ -1,0 +1,200 @@
+PDF Encrypt
+
+
+ 
+Software Requirements Specification
+ 
+
+ 
+April 25, 2015
+ 
+ 
+Heather Bock 
+Nicholas Land
+Mayce Varacalli
+ 
+ 
+ 
+ 
+ 
+ 
+Prepared for
+OU CSE 337 Software Engineering and Practice
+Instructor: Hua Ming
+Winter 2015
+
+
+
+
+
+
+
+
+
+
+
+Table of Contents
+
+1.	Project Title.…………………………………………………………………………… 3
+      2.   Preface……………………………………………………………………………….... 3
+	 2.1. Team……………..……………………………………………………………….. 3
+ 2.2. Revision History………………………………………………………………… 3
+      3.    Introduction…………………………………………………….……………………. 4
+	 3.1. Purpose……………………………………………………..……………………. 4
+	 3.2. Scope………………………………………………………..……………………. 4
+  	 3.3 Functionality………………………………………………..…………………… 4
+       4. Glossary……………………………………………..………………………………… 5
+       5. Users Requirements Definition……………………………………………………. 5
+       6. System Architecture…………………………………………………………………. 6 
+       7. System Requirements Specification……………………………………………… 7
+	  7.1 Non-functional Requirements……………………………………………..…. 7
+	  7.2 Functional Requirements……………………………………………………... 8
+       8. System Models……………………………………………………………………….. 8
+       9. System Evolution…………………………………………………………………….. 8 
+       10. Appendices………………………………………………………………………...... 9  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. Project Title
+
+The title of our project is going to be PDF Encrypt
+
+2. Preface
+
+Project Start Date: Feb 17th 
+Our group was formed in January, however the project start date began when we started collaborating ideas. The start date includes setting up a Google Drive for us to collaborate ideas through and a private GitHub repository to share the project to all group members (GitHub repository: . The projected completion date of our software was originally expected to be near the end of April 2015, however, after working further on the software, our project completion date has changed. It will take more time and research to have our software at a point where all features are available and formatting meets our desired look. 
+
+2.1 Team
+
+Heather Bock - Information Technology
+Background: Basic Web Development
+Nick Land - Computer Science
+Background: Software Developer
+Mayce Varacalli - Computer Science
+Background: Junior Software Developer
+
+2.2 Revision History 
+
+Date	Description	Comments
+03/06/2015	Created main java Class and API	
+03/19/2015	Set up form and passing data to controller	Create basic form for user to interact with to pass PDF to controller
+04/07/2015	Added API for decrypting and encrypting	Added API where implementation of encryption and decryption can begin
+04/12/2015	Update HTML file, CSS, and JAR files added	Format HTML file and CSS. Also update Model
+04/14/2015	Update HTML file & CSS	Update formatting on HTML and CSS
+04/25/2015	Update model	
+
+3. Introduction
+
+The idea behind the PDF Encrypt was brought up at first as a personal idea that would interface with Evernote to encrypt files before uploading to the site to add a layer of security.  Evernote is a suite of software and services that can be used for storing notes. PDF Encrypt is meant to be helpful for protecting documents that contain personal information. The goal is to use this tool as a security measure. Due to time constraints, the interface with Evernote may not be possible, so the project focuses on the encryption of just PDF files. 
+3.1 Purpose
+The purpose of our project is to create a piece of software in which the user can upload a PDF file to encrypt so it can be protected. This can be useful in protecting documents which contain confidential information and it can assist in preventing such information from being stolen.
+3.2 Scope
+3.2.1 Included in Scope
+1.	Encrypt PDF Files
+2.	Allow the encryption to be done through a web portal
+3.	Decrypt the encrypted PDF file
+
+3.2.2 Scope Exclusions
+1.	Encryption of any of files(PDF Encrypt will only include PDF files)
+2.	Can only encrypt one file at a time
+
+3.3 Functionality
+
+The PDF Encrypt will be accessible through a web portal where the user will be able to upload a PDF file that they would like encrypted. If they submit a file that is anything but a PDF, the web portal will throw an error and remind the user that only PDF files are accepted. Thereafter, the file will be encrypted and the user will be able to download the newly encrypted file. The user will also have the ability to decrypt the file after it has been encrypted. This will show that the program has been successful at encrypting and decrypting the file without changing any content. 
+
+
+
+4. Glossary
+
+Term	Definition
+CSS	Cascading Style Sheet (CSS) is used for formatting and aesthetics of a HTML file
+Decryption	The process of decoding an encrypted file.
+Encryption	The process of encoding messages or information in such a way that only authorized parties can read it.
+HTML	HyperText Markup Language is the standard markup language used to create web pages.
+JAR File	Java Archive File. It is a package file format used to combine many Java class files into one file to distribute on the Java platform
+Maven	A Yiddish word meaning accumulator of knowledge. Also a tool that provides a standard way of building and managing a java project.
+MVC	Model, View, Controller pattern of design
+
+
+
+5. Users Requirements Definition
+
+This piece of software is intended for one user at a time.  The system is created to encrypt PDF files to make personal documents more secure. There are two actions a user can perform. The user can encrypt or decrypt a single PDF file at a time. The user should be using Windows or Mac operating system. Also, the PDF to be encrypted must be located on the user’s machine. If the user intends to decrypt a file, the file must have first been encrypted by PDF encrypt. PDF Encrypt will not decrypt files that have been encrypted by other encryption software or mechanisms. Figure 1 displays the use case diagram for the software. 
+ 
+Figure 1
+
+PDF Encrypt interacts with the user through an HTML page where the user can browse for a PDF file. Once the PDF file has been submitted, the controller of the system passes the file to the model for the encryption or decryption work to be done. The file is then returned to the users files as either encrypted or decrypted.  
+
+
+6. System Architecture
+
+The PDF Encrypt software follows the MVC pattern. The software consists of a model, view, and controller. The view in PDF Encrypt consists of a HTML file with CSS styling. Information is input through the view and sent to the controller. Once the information is received by the controller, it passes it to the model for the work to be done. In the case of PDF Encrypt, the Model is where the encryption and decryption of the file takes place.
+The MVC pattern is beneficial for development purposes because it allows each team member to focus on a certain aspect of the software development. One developer worked on the model, one worked on the controller, and another worked on the CSS. The user interacts with the view, which is an HTML webpage. The information is then passed to the controller which directs it to the model for the encryption or decryption to take place. This model is also beneficial to our software design since everything is separate. The separation allows certain components to be altered without necessarily affecting the user interface.  
+
+
+
+
+7. System Requirements Specification
+
+The PDF Encrypt software consists of two packages: the model and the controller that were created using Java. The model consists of one class called EncryptionModel and the controller consists of the class called WebEncryptionController. The WebEncryptionController class is used to pass a file to the model where the encryption and decryption work takes place. The EncryptionModel class consists of an encryption and decryption API which performs the necessary algorithms to encrypt and decrypt the PDF file submitted. Figure 2 displays UML diagram showing the relationship between the controller and the model. 
+
+ 
+Figure 2
+
+PDF Encrypt also utilizes Spring Boot and Thymeleaf in addition to Java. The Spring Boot framework is used to simplify our Maven configuration and creates a stand-alone application.  Thymeleaf is a Java library that provides templates that we use to display our webpages. It focuses particularly on the ones that let the user know whether their file was or was not encrypted and decrypted. 
+
+
+	7.1 Non-functional Requirements
+●	User should be able to sufficiently use the system after ten minutes of training
+●	Encrypted file should be returned to user within two minutes of submitting
+●	Decrypted file should be returned to user within two minutes of submitting
+●	Only one PDF will be encrypted or decrypted at a time
+●	Encrypted PDF will only be decrypted with correct password
+●	Only user with correct password will be able to open encrypted file
+	
+7.2 Functional Requirements
+●	PDF is encrypted and returned to the user as an encrypted file
+●	Encrypted PDF is decrypted and returned to user as decrypted file
+●	User will get confirmation that PDF has been successfully encrypted
+
+
+
+8. System Models
+
+The Model and Controller packages have a dependent relationship. The file is first passed to the Controller from the View. The Controller acts as a go between from the View (user interface) and the Model. In the current version of PDF encrypt, the software is all contained within a JAR file. When the JAR file is launched, it runs the Java programming and the interface the user interacts with is an HTML file on the local domain. With the model we decided to use to create our software, each piece (model, controller, view) work together to make a functional product. If a change is made to the controller, it will not affect the way the model works, however, if the controller has an error, information may not be sent to the model properly. If there is an issue with the information sent to the model, then the software will not produce the desired results. 
+	In regards to the runtime environment, currently our software display works best with Google Chrome or Internet Explorer web browsers via the local host. The functionality of our software does not vary amongst web browsers. The formatting and styling is the only aspect affected by the browsing environment. 
+
+
+9. System Evolution
+
+In the future, our team would like to expand PDF Encrypt to interface with EverNote. We would also like to correct some of the constraints that face our software currently. Such constraints include the file location. Currently, our software can only encrypt PDF’s that are located in the project folder. Our goal is to be able to encrypt any PDF that is located on the user’s device. Our top priority is to optimize the functionality of our current software and then eventually integrate the Evernote interface.  Also, we would like to update the CSS styling of the user interface to make it more compatible with different web browsers and screen sizes. Currently, the CSS styling works best with Google Chrome and Internet Explorer web browsers.
+Currently, our development team is at the “Defined” stage of the Capability Maturity Model Integration (Level 3). At this stage, our software documentation has been completed and we have a functioning piece of software; however, there are still functionalities to be corrected and added. To complete the desired updates, a few more weeks are required. We have to do more research in regards to the integration with Evernote interface. Also, currently we have been testing the system to create a solution for the issue with file location, but have been unable to reach our desired results as of yet. Once all of our desired changes are implemented, the user will experience greater functionality with better features.
+
+
+10. Appendices
+Open source code that was used in our software development includes the iText API. This API contains the encryption and decryption algorithms used to encrypt and decrypt the PDF. This source code was obtained from iText software. It is specifically designed to help manipulate PDF files using Java. 
+Another open source resource that was used in PDF Encrypt is Spring Boot. Spring Boot is a framework that is used to help with the development of a Spring application. The purpose of the Spring application is to assist with the functionality of the controller so the necessary information can be delegated to the Model. 
+Lastly, Thymeleaf is also used in the development of our application. Thymeleaf is a Java library that is a XML, XHTML, or HTML5 template engine. It is able to display data or text that is produced by an application. In PDF encrypt, Thymeleaf is used in the HTML file of our project, which is part of the user interface.  
+
+
+
